@@ -1,20 +1,25 @@
 import figma from "@figma/code-connect";
 import { AppHeader, AppHeaderLeft, AppHeaderRight } from "./AppHeader";
 import { IconLocalLibrary } from "../../icons/IconLocalLibrary";
-import { Navbar } from "../../navigation/Navbar/Navbar";
-import { NavbarTab } from "../../navigation/Navbar/NavbarTab";
 
 figma.connect(
   AppHeader,
   "https://www.figma.com/design/s3BAU9djJ4fZWidxHbeMaB/Plataforma-Visus?node-id=382-210",
   {
-    example: () => (
+    props: {
+      size: figma.enum("Size", {
+        Desktop: "desktop",
+        Mobile: "mobile",
+      }),
+      navbar: figma.children("Content"),
+    },
+    example: ({ size, navbar }) => (
       <AppHeader
-        size="desktop"
+        size={size}
         title="Título"
         icon={<IconLocalLibrary />}
-        navbar={<Navbar><NavbarTab label="Aba" active /></Navbar>}
-        avatar={<img className="size-1200 rounded-full object-cover" alt="Avatar" src="" />}
+        navbar={navbar}
+        avatar={<img className="size-full rounded-full object-cover" alt="Avatar" src="" />}
       />
     ),
   }
@@ -22,19 +27,35 @@ figma.connect(
 
 figma.connect(
   AppHeaderLeft,
-  "https://www.figma.com/design/s3BAU9djJ4fZWidxHbeMaB/Plataforma-Visus?node-id=376-54",
+  "https://www.figma.com/design/s3BAU9djJ4fZWidxHbeMaB/Plataforma-Visus?node-id=522-11641",
   {
-    example: () => <AppHeaderLeft icon={<IconLocalLibrary />} title="Título" />,
+    props: {
+      size: figma.enum("Size", {
+        "Padrão": "desktop",
+        Mobile: "mobile",
+      }),
+      icon: figma.instance("Instância"),
+    },
+    example: ({ size, icon }) => (
+      <AppHeaderLeft icon={icon} title="Título" size={size} />
+    ),
   }
 );
 
 figma.connect(
   AppHeaderRight,
-  "https://www.figma.com/design/s3BAU9djJ4fZWidxHbeMaB/Plataforma-Visus?node-id=376-71",
+  "https://www.figma.com/design/s3BAU9djJ4fZWidxHbeMaB/Plataforma-Visus?node-id=522-11648",
   {
-    example: () => (
+    props: {
+      size: figma.enum("Size", {
+        Desktop: "desktop",
+        Mobile: "mobile",
+      }),
+    },
+    example: ({ size }) => (
       <AppHeaderRight
-        avatar={<img className="size-1200 rounded-full object-cover" alt="Avatar" src="" />}
+        size={size}
+        avatar={<img className="size-full rounded-full object-cover" alt="Avatar" src="" />}
       />
     ),
   }

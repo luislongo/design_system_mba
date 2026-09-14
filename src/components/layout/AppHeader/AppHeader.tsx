@@ -6,31 +6,41 @@ type Size = "desktop" | "mobile";
 export interface AppHeaderLeftProps {
   icon?: ReactNode;
   title?: string;
+  size?: Size;
   className?: string;
 }
 
-export function AppHeaderLeft({ icon, title = "", className = "" }: AppHeaderLeftProps) {
+export function AppHeaderLeft({ icon, title = "", size = "desktop", className = "" }: AppHeaderLeftProps) {
   return (
     <div
-      className={["flex items-center gap-250 overflow-hidden", className]
+      className={[
+        "flex items-center overflow-hidden",
+        size === "desktop" && "gap-250",
+        className,
+      ]
         .filter(Boolean)
         .join(" ")}
     >
       {icon}
-      <H1>{title}</H1>
+      {size === "desktop" && <H1>{title}</H1>}
     </div>
   );
 }
 
 export interface AppHeaderRightProps {
   avatar?: ReactNode;
+  size?: Size;
   className?: string;
 }
 
-export function AppHeaderRight({ avatar, className = "" }: AppHeaderRightProps) {
+export function AppHeaderRight({ avatar, size = "desktop", className = "" }: AppHeaderRightProps) {
   return (
     <div
-      className={["flex items-center justify-end shrink-0", className]
+      className={[
+        "flex items-center justify-center shrink-0",
+        size === "desktop" ? "size-1200" : "size-[36px]",
+        className,
+      ]
         .filter(Boolean)
         .join(" ")}
     >
@@ -60,15 +70,14 @@ export function AppHeader({
     <div
       className={[
         "flex items-center justify-between px-400 bg-light-full w-full",
-        size === "mobile" && "py-100",
         className,
       ]
         .filter(Boolean)
         .join(" ")}
     >
-      <AppHeaderLeft icon={icon} title={title} />
+      <AppHeaderLeft icon={icon} title={title} size={size} />
       {navbar}
-      <AppHeaderRight avatar={avatar} />
+      <AppHeaderRight avatar={avatar} size={size} />
     </div>
   );
 }

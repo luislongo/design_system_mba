@@ -13,7 +13,7 @@ const meta: Meta<typeof Navbar> = {
 export default meta;
 type Story = StoryObj<typeof Navbar>;
 
-export const Default: Story = {
+export const Desktop: Story = {
   render: () => (
     <Navbar>
       <NavbarTab label="Início" icon={ICON_OPTIONS["Home"]} active />
@@ -23,14 +23,15 @@ export const Default: Story = {
   ),
 };
 
-export const WithoutIcons: Story = {
+export const Mobile: Story = {
   render: () => (
-    <Navbar>
-      <NavbarTab label="Dashboard" active />
-      <NavbarTab label="Projetos" />
-      <NavbarTab label="Equipe" />
-      <NavbarTab label="Relatórios" />
-    </Navbar>
+    <div style={{ width: 390 }}>
+      <Navbar>
+        <NavbarTab label="Início" icon={ICON_OPTIONS["Home"]} size="mobile" active />
+        <NavbarTab label="Relatórios" icon={ICON_OPTIONS["BarChart"]} size="mobile" />
+        <NavbarTab label="Config." icon={ICON_OPTIONS["Settings"]} size="mobile" />
+      </Navbar>
+    </div>
   ),
 };
 
@@ -66,29 +67,4 @@ export const Controlled: Story = {
       </Navbar>
     );
   },
-};
-
-export const NavbarTabStates: Story = {
-  render: () => (
-    <div className="flex flex-col gap-600">
-      <div>
-        <p className="text-xs text-neutral-400 mb-200">Inativo</p>
-        <Navbar>
-          <NavbarTab label="Aba" icon={ICON_OPTIONS["Home"]} />
-        </Navbar>
-      </div>
-      <div>
-        <p className="text-xs text-neutral-400 mb-200">Ativo</p>
-        <Navbar>
-          <NavbarTab label="Aba" icon={ICON_OPTIONS["Home"]} active />
-        </Navbar>
-      </div>
-      <div>
-        <p className="text-xs text-neutral-400 mb-200">Desabilitado</p>
-        <Navbar>
-          <NavbarTab label="Aba" icon={ICON_OPTIONS["Home"]} disabled />
-        </Navbar>
-      </div>
-    </div>
-  ),
 };
