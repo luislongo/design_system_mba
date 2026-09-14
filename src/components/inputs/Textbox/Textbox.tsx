@@ -1,12 +1,13 @@
-import { type InputHTMLAttributes } from "react";
+import { forwardRef, type InputHTMLAttributes } from "react";
 
 export interface TextboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   hasError?: boolean;
 }
 
-export function Textbox({ hasError = false, disabled, className = "", ...props }: TextboxProps) {
-  return (
+export const Textbox = forwardRef<HTMLInputElement, TextboxProps>(
+  ({ hasError = false, disabled, className = "", ...props }, ref) => (
     <input
+      ref={ref}
       type="text"
       disabled={disabled}
       className={[
@@ -25,5 +26,5 @@ export function Textbox({ hasError = false, disabled, className = "", ...props }
         .join(" ")}
       {...props}
     />
-  );
-}
+  )
+);

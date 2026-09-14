@@ -1,4 +1,4 @@
-import { type SelectHTMLAttributes, type ReactNode } from "react";
+import { forwardRef, type SelectHTMLAttributes, type ReactNode } from "react";
 
 const ChevronDownIcon = () => (
   <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" aria-hidden>
@@ -24,17 +24,11 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   children?: ReactNode;
 }
 
-export function Select({
-  hasError = false,
-  disabled,
-  options,
-  children,
-  className = "",
-  ...props
-}: SelectProps) {
-  return (
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(
+  ({ hasError = false, disabled, options, children, className = "", ...props }, ref) => (
     <div className={["relative w-full", className].join(" ")}>
       <select
+        ref={ref}
         disabled={disabled}
         className={[
           "appearance-none w-full h-10 px-400 pr-1000 rounded-200 border outline-none",
@@ -69,5 +63,5 @@ export function Select({
         <ChevronDownIcon />
       </span>
     </div>
-  );
-}
+  )
+);
