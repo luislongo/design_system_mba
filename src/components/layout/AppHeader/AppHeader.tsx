@@ -44,6 +44,7 @@ export interface AppHeaderProps {
   title?: string;
   icon?: ReactNode;
   avatar?: ReactNode;
+  navbar?: ReactNode;
   className?: string;
 }
 
@@ -52,6 +53,7 @@ export function AppHeader({
   title = "",
   icon,
   avatar,
+  navbar,
   className = "",
 }: AppHeaderProps) {
   return (
@@ -65,6 +67,7 @@ export function AppHeader({
         .join(" ")}
     >
       <AppHeaderLeft icon={icon} title={title} />
+      {navbar}
       <AppHeaderRight avatar={avatar} />
     </div>
   );

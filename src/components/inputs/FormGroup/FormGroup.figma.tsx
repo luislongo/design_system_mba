@@ -1,5 +1,6 @@
 import figma from "@figma/code-connect";
 import { FormGroup } from "./FormGroup";
+import { Textbox } from "../Textbox";
 
 figma.connect(
   FormGroup,
@@ -15,7 +16,9 @@ figma.connect(
       }),
     },
     example: ({ label, error, disabled }) => (
-      <FormGroup label={label} error={error} disabled={disabled} />
+      <FormGroup label={label} error={error} disabled={disabled}>
+        <Textbox hasError={!!error} disabled={disabled} placeholder="Placeholder..." />
+      </FormGroup>
     ),
   }
 );
@@ -32,7 +35,9 @@ figma.connect(
       }),
     },
     example: ({ label, disabled }) => (
-      <FormGroup label={label} disabled={disabled} />
+      <FormGroup label={label} disabled={disabled}>
+        <Textbox disabled={disabled} placeholder="Placeholder..." />
+      </FormGroup>
     ),
   }
 );
@@ -43,6 +48,10 @@ figma.connect(
   "https://www.figma.com/design/s3BAU9djJ4fZWidxHbeMaB/Plataforma-Visus?node-id=281-896",
   {
     props: {},
-    example: () => <FormGroup label="Campo" error="Campo inválido" />,
+    example: () => (
+      <FormGroup label="Campo" error="Campo inválido">
+        <Textbox hasError placeholder="Placeholder..." />
+      </FormGroup>
+    ),
   }
 );

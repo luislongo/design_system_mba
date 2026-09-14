@@ -1,10 +1,11 @@
-import { type InputHTMLAttributes } from "react";
+import { type InputHTMLAttributes, type ReactNode } from "react";
 import { Textbox } from "../Textbox";
 import { Caption, Label } from "../../typography";
 
 export interface FormGroupProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label?: string;
   error?: string;
+  children?: ReactNode;
 }
 
 export function FormGroup({
@@ -13,6 +14,7 @@ export function FormGroup({
   disabled,
   id,
   className = "",
+  children,
   ...props
 }: FormGroupProps) {
   const inputId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
@@ -29,7 +31,7 @@ export function FormGroup({
           {label}
         </Label>
       )}
-      <Textbox id={inputId} hasError={!!error} disabled={disabled} {...props} />
+      {children ?? <Textbox id={inputId} hasError={!!error} disabled={disabled} {...props} />}
       {error && (
         <Caption className="text-danger-500">{error}</Caption>
       )}

@@ -1,6 +1,8 @@
 import figma from "@figma/code-connect";
 import { AppHeader, AppHeaderLeft, AppHeaderRight } from "./AppHeader";
 import { IconLocalLibrary } from "../../icons/IconLocalLibrary";
+import { Navbar } from "../../navigation/Navbar/Navbar";
+import { NavbarTab } from "../../navigation/Navbar/NavbarTab";
 
 figma.connect(
   AppHeader,
@@ -11,6 +13,7 @@ figma.connect(
         size="desktop"
         title="Título"
         icon={<IconLocalLibrary />}
+        navbar={<Navbar><NavbarTab label="Aba" active /></Navbar>}
         avatar={<img className="size-1200 rounded-full object-cover" alt="Avatar" src="" />}
       />
     ),
