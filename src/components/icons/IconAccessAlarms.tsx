@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconAccessAlarms(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M22 5.69999L17.4 1.79999L16.1 3.29999L20.7 7.19999L22 5.69999ZM7.9 3.39999L6.6 1.89999L2 5.69999L3.3 7.19999L7.9 3.39999ZM12.5 7.99999H11V14L15.7 16.9L16.5 15.7L12.5 13.3V7.99999ZM12 3.99999C7 3.99999 3 7.99999 3 13C3 18 7 22 12 22C17 22 21 18 21 13C21 7.99999 17 3.99999 12 3.99999ZM12 20C8.1 20 5 16.9 5 13C5 9.09999 8.1 5.99999 12 5.99999C15.9 5.99999 19 9.09999 19 13C19 16.9 15.9 20 12 20Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

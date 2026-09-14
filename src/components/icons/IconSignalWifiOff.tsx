@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconSignalWifiOff(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M23.64 7C23.19 6.66 18.71 3 12 3C10.68 3 9.44999 3.14 8.30999 3.38L18.43 13.5L23.64 7ZM3.40999 1.31L1.99999 2.72L4.04999 4.77C1.90999 5.76 0.589985 6.82 0.359985 7L12 21.5L15.91 16.63L19.23 19.95L20.64 18.54L3.40999 1.31Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

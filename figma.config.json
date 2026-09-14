@@ -1,0 +1,11 @@
+{
+  "codeConnect": {
+    "include": [
+      "src/**/*.tsx",
+      "!src/**/*.stories.tsx"
+    ],
+    "importPaths": {
+      "src/components/**/*": "@ds/core"
+    }
+  }
+}

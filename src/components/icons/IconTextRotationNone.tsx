@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconTextRotationNone(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M21 18L18 15V17H5V19H18V21L21 18ZM9.5 11.8H14.5L15.4 14H17.5L12.75 3H11.25L6.5 14H8.6L9.5 11.8ZM12 4.98L13.87 10H10.13L12 4.98Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

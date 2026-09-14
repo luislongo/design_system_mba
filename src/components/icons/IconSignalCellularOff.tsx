@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconSignalCellularOff(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M21 1L12.69 9.31L21 17.61V1ZM4.91 4.36L3.5 5.77L9.86 12.14L1 21H18.73L20.73 23L22.14 21.59L4.91 4.36Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconKeyboardArrowUp(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

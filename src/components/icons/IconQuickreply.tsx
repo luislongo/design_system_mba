@@ -1,0 +1,20 @@
+import { type SVGProps } from "react";
+
+export function IconQuickreply(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M4 17.17V4H20V10H22V4C22 2.9 21.1 2 20 2H4C2.9 2 2.01 2.9 2.01 4L2 22L6 18H15V16H5.17L4 17.17Z" fill="currentColor"/>
+<path d="M22.5 16H20.3L22 12H17V18H19V23L22.5 16Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

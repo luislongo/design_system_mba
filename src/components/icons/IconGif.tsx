@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconGif(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M11.5 9H13V15H11.5V9ZM9 9H6C5.4 9 5 9.5 5 10V14C5 14.5 5.4 15 6 15H9C9.6 15 10 14.5 10 14V12H8.5V13.5H6.5V10.5H10V10C10 9.5 9.6 9 9 9ZM19 10.5V9H14.5V15H16V13H18V11.5H16V10.5H19Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconPhonelinkOff(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M22 5.99999V3.99999H7.39L9.39 5.99999H22ZM24 19V8.99999C24 8.44999 23.55 7.99999 23 7.99999H17C16.45 7.99999 16 8.44999 16 8.99999V12.61L18 14.61V9.99999H22V17H20.39L23.32 19.93C23.71 19.8 24 19.44 24 19ZM2.06 1.50999L0.65 2.91999L2.47 4.73999C2.18 5.07999 2 5.51999 2 5.99999V17H0V20H17.73L20.08 22.35L21.49 20.94L2.06 1.50999ZM4 17V6.26999L14.73 17H4Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

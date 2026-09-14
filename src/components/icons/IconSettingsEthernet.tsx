@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconSettingsEthernet(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M7.77001 6.75998L6.23001 5.47998L0.820007 12L6.23001 18.52L7.77001 17.24L3.42001 12L7.77001 6.75998ZM7.00001 13H9.00001V11H7.00001V13ZM17 11H15V13H17V11ZM11 13H13V11H11V13ZM17.77 5.47998L16.23 6.75998L20.58 12L16.23 17.24L17.77 18.52L23.18 12L17.77 5.47998Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

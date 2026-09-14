@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconIso(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM5.5 7.5H7.5V5.5H9V7.5H11V9H9V11H7.5V9H5.5V7.5ZM19 19H5L19 5V19ZM17 17V15.5H12V17H17Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

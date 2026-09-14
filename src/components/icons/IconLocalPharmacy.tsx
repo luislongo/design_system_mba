@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconLocalPharmacy(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M21 5H18.36L19.5 1.86L17.15 1L15.69 5H3V7L5 13L3 19V21H21V19L19 13L21 7V5ZM17.1 13.63L18.89 19H5.11L6.9 13.63L7.11 13L6.9 12.37L5.11 7H18.89L17.1 12.37L16.89 13L17.1 13.63ZM13 9H11V12H8V14H11V17H13V14H16V12H13V9Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}

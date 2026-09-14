@@ -1,0 +1,19 @@
+import { type SVGProps } from "react";
+
+export function IconLaptopWindows(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <g>
+<path d="M20 18V17C21.1 17 21.99 16.1 21.99 15L22 5C22 3.9 21.1 3 20 3H4C2.9 3 2 3.9 2 5V15C2 16.1 2.9 17 4 17V18H0V20H24V18H20ZM4 5H20V15H4V5Z" fill="currentColor"/>
+</g>
+    </svg>
+  );
+}
