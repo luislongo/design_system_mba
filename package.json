@@ -1,6 +1,6 @@
 {
   "name": "@luislongo/ds-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -46,6 +46,9 @@
     "@tanstack/react-table": "^9.2.4",
     "recharts": "^3.10.1"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
