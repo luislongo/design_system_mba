@@ -1,12 +1,12 @@
-# @ds/core
+# @luislongo/ds-core
 
 Biblioteca de componentes React e tokens de design, construída sobre Tailwind CSS e documentada em Storybook.
 
-Fornece a camada de UI das aplicações de produto: 16 componentes e uma escala de tokens derivada do Figma, distribuídos como um único pacote ESM com CSS separado.
+Fornece a camada de UI das aplicações de produto: 16 componentes e uma escala de tokens derivada do Figma, distribuídos como um único pacote ESM com CSS separado via **GitHub Packages**.
 
 ```tsx
-import "@ds/core/style.css";
-import { Button, FormGroup, MegaSelect } from "@ds/core";
+import "@luislongo/ds-core/style.css";
+import { Button, FormGroup, MegaSelect } from "@luislongo/ds-core";
 
 <FormGroup label="E-mail" placeholder="voce@exemplo.com" />
 <Button loading={enviando}>Enviar</Button>
@@ -16,19 +16,21 @@ import { Button, FormGroup, MegaSelect } from "@ds/core";
 
 ## Instalação
 
-O pacote é `private` e não é publicado em registry — o consumo é por **workspace local ou link `file:`**.
+O pacote é publicado no **GitHub Packages** (`@luislongo/ds-core`). Para instalá-lo:
 
-```json
-// package.json da aplicação
-{ "dependencies": { "@ds/core": "file:../design_system" } }
+**1. Configure o registry no projeto consumidor** — crie ou edite `.npmrc` na raiz:
+
+```ini
+@luislongo:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=SEU_GITHUB_TOKEN
 ```
 
-Antes do primeiro uso, gere o `dist/`:
+O token precisa ter o escopo `read:packages`. Crie um em **GitHub → Settings → Developer settings → Personal access tokens**.
+
+**2. Instale o pacote:**
 
 ```bash
-cd design_system
-npm install
-npm run build
+npm install @luislongo/ds-core
 ```
 
 Requisitos do consumidor: **React 18 ou 19** (`peerDependency`) e um bundler com suporte a **ESM** — não há build CommonJS.
@@ -37,7 +39,7 @@ Requisitos do consumidor: **React 18 ou 19** (`peerDependency`) e um bundler com
 
 ```tsx
 // 1. importar o CSS uma única vez, no entrypoint da aplicação
-import "@ds/core/style.css";
+import "@luislongo/ds-core/style.css";
 ```
 
 ```html
@@ -48,7 +50,7 @@ import "@ds/core/style.css";
 ```ts
 // 3. (opcional) estender o Tailwind da aplicação com os tokens,
 //    para usar bg-primary-500, px-400 etc. no código da aplicação
-import { colors, spacing, borderRadius, fontFamily, fontSize, fontWeight } from "@ds/core";
+import { colors, spacing, borderRadius, fontFamily, fontSize, fontWeight } from "@luislongo/ds-core";
 
 export default {
   content: ["./src/**/*.{ts,tsx}"],
@@ -127,7 +129,7 @@ Duas camadas: `colorPrimitives` (valores crus) e `semanticColors` (intenção, c
 Todos os tokens são exportados em runtime, para onde classes não alcançam:
 
 ```tsx
-import { colors, spacing } from "@ds/core";
+import { colors, spacing } from "@luislongo/ds-core";
 <LineChart stroke={colors.primary[500]} gridColor={colors.neutral[100]} />
 ```
 
@@ -208,7 +210,7 @@ design_system/
 
 **Tailwind como única camada de estilo.** A variação visual vive em mapas `Record<Variant, string>`. O tipo garante que o mapa cubra a união; o conteúdo das strings não é validado.
 
-**ESM-only, CSS em subpath separado.** Dois pontos de entrada, e apenas dois: `@ds/core` e `@ds/core/style.css`. Não há deep import por componente.
+**ESM-only, CSS em subpath separado.** Dois pontos de entrada, e apenas dois: `@luislongo/ds-core` e `@luislongo/ds-core/style.css`. Não há deep import por componente.
 
 **Tokens transcritos manualmente do Figma.** Sem Style Dictionary no pipeline — a sincronização é uma etapa humana, e nada no build detecta divergência.
 
@@ -218,7 +220,7 @@ design_system/
 
 ## Estado atual
 
-`0.0.1`. O que está em pé e o que não está:
+`0.0.2`. O que está em pé e o que não está:
 
 | | |
 |---|---|
