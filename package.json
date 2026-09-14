@@ -1,7 +1,6 @@
 {
-  "name": "@ds/core",
+  "name": "@luislongo/ds-core",
   "version": "0.0.1",
-  "private": true,
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -46,5 +45,8 @@
   "dependencies": {
     "@tanstack/react-table": "^9.2.4",
     "recharts": "^3.10.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
