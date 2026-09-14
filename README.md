@@ -2,7 +2,7 @@
 
 Biblioteca de componentes React e tokens de design, construída sobre Tailwind CSS e documentada em Storybook.
 
-Fornece a camada de UI das aplicações de produto: 16 componentes e uma escala de tokens derivada do Figma, distribuídos como um único pacote ESM com CSS separado via **GitHub Packages**.
+Fornece a camada de UI das aplicações de produto: componentes em 8 categorias e uma escala de tokens derivada do Figma, distribuídos como um único pacote ESM com CSS separado via **GitHub Packages**.
 
 ```tsx
 import "@luislongo/ds-core/style.css";
@@ -81,8 +81,13 @@ npm run build-storybook  # storybook-static/
 | Categoria | Componentes |
 |---|---|
 | **Ações** | [`Button`](docs/features.md#button) · [`DangerButton`](docs/features.md#dangerbutton) · [`HeroButton`](docs/features.md#herobutton) · [`IconButton`](docs/features.md#iconbutton) · [`IconToggle`](docs/features.md#icontoggle) |
-| **Formulário** | [`Textbox`](docs/features.md#textbox) · [`FormGroup`](docs/features.md#formgroup) · [`Checkbox`](docs/features.md#checkbox) · [`Radio`](docs/features.md#radio) · [`Select`](docs/features.md#select) · [`SelectOption`](docs/features.md#selectoption) · [`MegaSelect`](docs/features.md#megaselect) · [`MegaSelectOption`](docs/features.md#megaselectoption) · [`SearchInput`](docs/features.md#searchinput) |
+| **Formulário** | [`Textbox`](docs/features.md#textbox) · [`FormGroup`](docs/features.md#formgroup) · [`Checkbox`](docs/features.md#checkbox) · [`Radio`](docs/features.md#radio) · [`Select`](docs/features.md#select) · [`SelectOption`](docs/features.md#selectoption) · [`MegaSelect`](docs/features.md#megaselect) · [`MegaSelectOption`](docs/features.md#megaselectoption) · [`SearchInput`](docs/features.md#searchinput) · [`DateRangeInput`](docs/features.md#daterangeinput) |
 | **Navegação** | [`Navbar`](docs/features.md#navbar--navbartab) · [`NavbarTab`](docs/features.md#navbar--navbartab) · [`TabList`](docs/features.md#tablist--tab) · [`Tab`](docs/features.md#tablist--tab) |
+| **Gráficos** | [`AreaChart`](docs/features.md#areachart) · [`BarChart`](docs/features.md#barchart) · [`LineChart`](docs/features.md#linechart) |
+| **Dados** | [`ProgressBar`](docs/features.md#progressbar) · [`ProgressChip`](docs/features.md#progresschip) · [`GraphCard`](docs/features.md#graphcard) · [`InfoCard`](docs/features.md#infocard) |
+| **Tabela** | [`ProgressTable`](docs/features.md#progresstable) · [`TableRow`](docs/features.md#tablerow) · [`TableRowCell`](docs/features.md#tablerowcell) · [`TableHeaderRow`](docs/features.md#tableheaderrow) · [`TableHeaderCell`](docs/features.md#tableheadercell) · [`TableCheckboxCell`](docs/features.md#tablecheckboxcell) |
+| **Layout** | [`AppHeader`](docs/features.md#appheader) · [`ContentGrid`](docs/features.md#contentgrid) · [`ContentRow`](docs/features.md#contentrow) · [`DoubleColumn`](docs/features.md#doublecolumn) |
+| **Tipografia** | `H1` · `H2` · `H3` · `Subtitle` · `Body` · `Description` · `Label` · `Caption` |
 
 O sistema especializa **por intenção, não por variante**: uma ação destrutiva é `<DangerButton>`, não `<Button variant="danger">`. Isso torna a intenção visível no ponto de uso e permite que cada componente tenha o eixo de variação que faz sentido para ele — `Button` tem `loading` e três tamanhos, `HeroButton` não tem tamanho, `IconButton` tem `icon` obrigatório.
 
@@ -196,8 +201,14 @@ design_system/
 ├── src/
 │   ├── components/
 │   │   ├── actions/      Button, DangerButton, HeroButton, IconButton, IconToggle
-│   │   ├── inputs/       Textbox, FormGroup, Checkbox, Radio, Select, MegaSelect, SearchInput
-│   │   └── navigation/   Navbar (+NavbarTab), TabList (+Tab)
+│   │   ├── charts/       AreaChart, BarChart, LineChart
+│   │   ├── data-display/ ProgressBar, ProgressChip, GraphCard, InfoCard
+│   │   ├── icons/        Icon* (SVG inline — centenas de ícones)
+│   │   ├── inputs/       Textbox, FormGroup, Checkbox, Radio, Select, MegaSelect, SearchInput, DateRangeInput
+│   │   ├── layout/       AppHeader, ContentGrid, ContentRow, DoubleColumn
+│   │   ├── navigation/   Navbar (+NavbarTab), TabList (+Tab)
+│   │   ├── table/        ProgressTable, TableRow, TableRowCell, TableHeaderRow, TableHeaderCell, TableCheckboxCell
+│   │   └── typography/   H1, H2, H3, Subtitle, Body, Description, Label, Caption
 │   ├── styles/globals.css
 │   ├── tokens/           colors.ts, spacing.ts, typography.ts
 │   └── index.ts
@@ -220,11 +231,11 @@ design_system/
 
 ## Estado atual
 
-`0.0.2`. O que está em pé e o que não está:
+`0.0.4`. O que está em pé e o que não está:
 
 | | |
 |---|---|
-| ✅ | 16 componentes com API tipada e `.d.ts` gerado |
+| ✅ | Componentes em 8 categorias com API tipada e `.d.ts` gerado |
 | ✅ | Camada de tokens em duas camadas, alinhada ao export do Figma |
 | ✅ | Semântica ARIA e foco visível na maior parte dos componentes |
 | ✅ | `tsc` bloqueante no build |
